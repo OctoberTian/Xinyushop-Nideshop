@@ -1,0 +1,63 @@
+<!-- 左侧菜单开始 -->
+<!-- Left Panel -->
+<aside id="left-panel" class="left-panel" th:fragment="left">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/admin/index" style="font-size:20px;"> 欣雨超市后台 </a>
+                </li>
+            </ul>
+            <a class="navbar-brand hidden" href=".."><img src="/images/xingyu.png" alt="Logo"></a>
+        </div>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+                <h3 class="menu-title">管理员端</h3><!-- /.menu-title -->
+
+                <li class="menu-item-has-children dropdown" >
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                        <i class="menu-icon fa fa-table"></i>商品管理</a>
+                    <ul class="sub-menu children dropdown-menu" id="category">
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005000">推荐</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005001">水果</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005002">饮料</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005003">零食</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005004">百货</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-tag"></i>
+                            <a href="/admin/categoryDetails?id=1005005">粮油</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/admin/showCate"> <i class="menu-icon ti-email"></i>查看当前订单</a>
+                </li>
+                <li>
+                    <a href="/admin/showOldCate"> <i class="menu-icon ti-email"></i>查看历史订单</a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside><!-- /#left-panel -->
+
+
+<!-- Left Panel -->

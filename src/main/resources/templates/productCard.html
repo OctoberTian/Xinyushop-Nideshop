@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="/assets/scss/style.css">
+    <link href="/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <input type="text" id="id" name="hideid" style="display: none;" >
+    <div class="card">
+        <div class="card-body card-block">
+            <div class="card-title">
+                <h3 class="text-center">商品详情</h3>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-6">
+                    <div class="form-group">
+                         <div class="input-group">
+                            <div class="input-group-addon">商品编号</div>
+                            <input type="text" readonly="readonly" id="good-id" name="good-id" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">商品名称</div>
+                            <input type="text" id="good-name" name="good-name" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon" id="good-picture1">商品主图
+                                    <form id="goodpic1form" enctype='multipart/form-data' onsubmit="return false">
+                                        <input type="file" style="width: 350px;outline: none;"  class="form-control" accept=".png,.jpg,.bmp,.gif,.jpeg" id="good-pic1" name="file">
+                                        <input type="hidden" id="picid1" name="picid"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon" id="good-picture2">商品列表图
+                                    <form id="goodpic2form" enctype='multipart/form-data' onsubmit="return false">
+                                        <input type="file" style="width: 350px;outline: none;"  class="form-control" accept=".png,.jpg,.bmp,.gif,.jpeg" id="good-pic2" name="file">
+                                        <input type="hidden" id="picid2" name="picid"/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">商品库存</div>
+                                <input type="number" id="good-num" name="good-num" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">销售状态</div>
+                                <select name="good-status" id="good-status" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">商品单位</div>
+                                <input type="text" id="good-unit" name="good-unit" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">零售价</div>
+                                <input type="number" id="good-price" name="good-price" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">销售量</div>
+                                <input type="text" readonly="readonly" id="good-sell" name="good-sell" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">商品简述</div>
+                                <input type="text" id="good-brief" name="good-brief" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">详情描述</div>
+                                <textarea type="text" id="good-desc" name="good-desc" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="float: right;">
+                    <button onclick="updateGood()" class="btn btn-primary rounded">
+                        <i class="fa fa-dot-circle-o"></i> 修改
+                    </button>
+                </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="/js/layer/layer.js" ></script>
+    <script src="/jQuery/jquery.min.js"></script>
+    <script src="/jQuery/jquery.form.js"></script>
+    <script src="/js/productCard.js"></script>
+
+</body>
+</html>

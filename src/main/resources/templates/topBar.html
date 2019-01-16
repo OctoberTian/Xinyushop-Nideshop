@@ -1,0 +1,86 @@
+<!-- Header-->
+<header id="header" class="header" th:fragment="top">
+    <script>
+        function changeFreight() {
+            $.ajax({
+                url: "/admin/getFreight",
+                type: "post",  //数据发送方式
+                async: false,  //是否异步请求
+                dataType: "text",
+                data: {},
+                success: function (data) {
+                    if(data!==-1) {
+                        $("#nowFreight").text("(当前："+data + "元/次)");
+                    }else{
+                        layer.msg("出现异常错误！");
+                    }
+                }
+            });
+            $("#freight").show();
+            $("#tishi").text("点击修改");
+            let freight = $("#freight").val();
+            if(freight!==null && freight!=='') {
+                $.ajax({
+                    url: "/admin/changeFreight",
+                    type: "post",  //数据发送方式
+                    async: false,  //是否异步请求
+                    dataType: "json",
+                    data: {num: freight},
+                    success: function (data) {
+                        layer.msg("修改成功！当前运费为："+freight+"元！");
+                        $("#nowFreight").text("(当前："+freight+"元/次)");
+                    }
+                });
+            }
+        }
+    </script>
+    <div class="header-menu">
+        <div class="col-sm-7">
+            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa-tasks" style="font:normal normal normal 18px/2.5 FontAwesome;"></i></a>
+            <div class="header-left">
+                <button class="btn btn-success btn-outline-success rounded" onclick="addProduct()"><i
+                        class="fa fa-plus-circle"> 添加商品</i></button>
+                <button id="confirm" class="btn btn-success btn-outline-success rounded" onclick="changeFreight()">
+                    <i class="fa fa-tags" id="tishi">修改邮费</i>
+                    <input type="number" id="freight" name="freight" style="display: none;width: 90px;width: 50px;border: 1px solid #00a67c;color: #00a67c;margin-left: 10px;"/>
+                    <span id="nowFreight"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-sm-5">
+            <div class="user-area dropdown float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="user-avatar rounded-circle" src="/images/admin.jpg" alt="User Avatar">
+                </a>
+
+                <div class="user-menu dropdown-menu">
+                    <a class="nav-link" href="/login"><i class="fa fa-power -off"></i>退出</a>
+                </div>
+            </div>
+
+            <div class="language-select dropdown" id="language-select">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                    <i class="flag-icon flag-icon-us"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="language" >
+                    <div class="dropdown-item">
+                        <span class="flag-icon flag-icon-fr"></span>
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="flag-icon flag-icon-es"></i>
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="flag-icon flag-icon-us"></i>
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="flag-icon flag-icon-it"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</header><!-- /header -->
+<!-- Header-->
