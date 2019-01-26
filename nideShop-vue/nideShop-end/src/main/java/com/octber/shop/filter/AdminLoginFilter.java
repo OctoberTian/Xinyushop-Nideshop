@@ -20,13 +20,13 @@ public class AdminLoginFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		HttpServletRequest req = (HttpServletRequest)request;
-        HttpSession session = req.getSession();
-        Admin user = (Admin)session.getAttribute(ADMIN_LOGIN);
-    	if (user == null) {
-    		((HttpServletResponse)response).sendRedirect(LOGIN_PAGE);
-    		return;
-    	}
+//		HttpServletRequest req = (HttpServletRequest)request;
+//        HttpSession session = req.getSession();
+//        Admin user = (Admin)session.getAttribute(ADMIN_LOGIN);
+//    	if (user == null) {
+//    		((HttpServletResponse)response).sendRedirect(LOGIN_PAGE);
+//    		return;
+//    	}
         chain.doFilter(request, response);
 	}
 
