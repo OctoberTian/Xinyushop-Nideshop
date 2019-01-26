@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <image class="icon"></image>
+      <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
+    </navigator>
+  </view>
+  <view class="catalog">
+    <scroll-view class="nav" scroll-y="true">
+        <view class="item {{ currentCategory.id == item.id ? 'active' : ''}}" wx:for="{{navList}}"  data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view class="cate" scroll-y="true">
+        <navigator url="url" class="banner">
+            <image class="image" src="{{currentCategory.wap_banner_url}}"></image>
+            <view class="txt">{{currentCategory.front_name}}</view>
+        </navigator>
+        <view class="hd">
+            <text class="line"></text>
+            <text class="txt">{{currentCategory.name}}分类</text>
+            <text class="line"></text>
+        </view>
+        <view class="bd">
+        <view class="cate-item">
+        <view class="b">
+          <view class="item"  wx:for="{{goodsList}}" wx:for-item="iitem" wx:for-index="iindex" >
+            <navigator url="/pages/goods/goods?id={{iitem.id}}" >
+                <image class="img" src="{{iitem.list_pic_url}}" background-size="cover"></image>
+            <view class='item_right'>
+              <text class="name">{{iitem.name}}</text>
+              <view class='price_h'>
+                <view class='naiyo'>
+                  <text class="history">已售 {{iitem.sell_volume}} 件</text>
+                  <view class='priceg'>
+                    <text class="price">￥{{iitem.retail_price}}</text>
+                    <text class="orgprice">￥{{iitem.retail_price}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            </navigator>
+          </view>
+        </view>
+    </view>
+        </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="coupon-form">
+    <view class="input-box">
+      <input class="coupon-sn" placeholder="请输入优惠码" />
+      <image class="clear-icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/clear-fb-dd9d604f86.png"></image>
+    </view>
+    <button class="add-btn disabled">兑换</button>
+  </view>
+  <view class="help">使用说明</view>
+  <view class="coupon-list">
+    <view class="item">
+      <view class="tag">新人专享</view>
+      <view class="content">
+        <view class="left">
+          <view class="name">限时免单券</view>
+          <view class="time">2019.01.08-2019.06.11</view>
+        </view>
+        <view class="right">
+          <button class="go">去使用</button>
+        </view>
+      </view>
+      <view class="condition">
+        <text class="txt">教育超市奶茶专享；VIP用户福利；特殊商品除外</text>
+        <image src="https://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/couponArrow-71315b4145.png" class="icon"></image>
+      </view>
+    </view>
+
+     <view class="item">
+      <view class="tag">新人专享</view>
+      <view class="content">
+        <view class="left">
+          <view class="name">限时免单券</view>
+          <view class="time">2018.12.08-2018.12.31</view>
+        </view>
+        <view class="right">
+          <button class="go">去使用</button>
+        </view>
+      </view>
+      <view class="condition">
+        <text class="txt">新鲜水果专享；VIP用户福利；特殊商品除外</text>
+        <image src="https://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/couponArrow-71315b4145.png" class="icon"></image>
+      </view>
+    </view>
+  </view>
+
+
+</view>
