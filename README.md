@@ -1,15 +1,7 @@
 # Xinyushop-Nideshop
-基于nideshop的微信小程序以及其后台
-
-
-
-# 部署方式
-
-```bas
-mvn install
-
-java -jar ./target/shop-1.0.0.jar
-```
-
+基于nideshop的微信小程序以及其后端和管理后台
+1. Springboot+thymeleaf
+2. Springboot+vue
+3. 微信小程序
 
 
