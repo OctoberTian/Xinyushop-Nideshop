@@ -1,0 +1,19 @@
+spring:
+  mail:
+    host: smtp.163.com
+    username: xinyusupermarket@163.com
+    password: ht970707
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.port: 994
+    properties.mail.display.sendmail: Xinyu
+    properties.mail.display.sendname: XinyuSuperMarket
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+info:
+  app:
+    name: xinyu shop platform
+    version: 1.0.0
+
